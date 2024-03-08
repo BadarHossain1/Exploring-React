@@ -3,10 +3,15 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Todo from './Todo'
+import Actor from './Actor'
+import Singers from './Singers'
 
 
 function App() {
   const [count, setCount] = useState(0)
+  const actors = ['Tom Cruise', 'Tom Hanks', 'Tom Hardy', 'Tom Holland', 'Tom Felton']
+
+  const singers = [{ name: 'Atif Aslam', age: 38 }, { name: 'Ali Zafar', age: 40 }, { name: 'Arijit Singh', age: 34 }, { name: 'Sonu Nigam', age: 48 }, { name: 'Arjit Singh', age: 34 }]
 
   return (
     <>
@@ -19,10 +24,19 @@ function App() {
         </a>
       </div>
       <h1>React ka jalwa</h1>
+      
+      {
+        actors.map(actor => <Actor name={actor}></Actor>)
+      }
+      {
+        singers.map(singer => <Singers singer={singer}></Singers>)
+      }
 
-      <Todo task="Learn React" isDone={true}></Todo>
+
+
+      {/* <Todo task="Learn React" isDone={true}></Todo>
       <Todo task="Core concepts" isDone={false}></Todo>
-      <Todo task="Try JSX" isDone={true}></Todo>
+      <Todo task="Try JSX" isDone={true}></Todo> */}
 
 
 
